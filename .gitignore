@@ -1,0 +1,19 @@
+# Ambiente virtual
+venv/
+.env/
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Configs locais
+doc_automator_config.json
+
+# Arquivos temporários
+checkpoint.json
+
+# Office temporários
+~$*.docx
