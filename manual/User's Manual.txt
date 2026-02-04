@@ -1,0 +1,130 @@
+=================================
+MANUAL DE USO: DOCUMENT AUTOMATOR
+=================================
+
+-----------------------
+1. INTRODUÇÃO
+-----------------------
+Sistema que automatiza criação de documentos personalizados a partir de modelos 
+Word e dados de planilhas Excel. Substitui marcadores especiais (placeholders) 
+por dados reais, gerando múltiplos arquivos de forma rápida e organizada.
+
+-----------------------
+2. PRÉ-REQUISITOS
+-----------------------
+- Windows 10/11
+- Microsoft Office instalado
+- Python 3.8+ (já pré-instalado no script)
+- Pacotes Python: pandas, pywin32 (instalados automaticamente)
+
+-----------------------
+3. CONFIGURAÇÃO INICIAL
+-----------------------
+Passo 1: Executar o sistema
+  > python Document Automator.py
+
+Passo 2: Configurar diretórios
+  1. Selecione "Configurar Sistema" > "Diretórios"
+  2. Informe:
+      - Pasta de Modelos: Onde estão seus .docx
+      - Base de Dados: Arquivo Excel com informações
+      - Pasta de Saída: Onde salvar documentos gerados
+
+Passo 3: Configurar Placeholders
+  1. Selecione "Placeholders"
+  2. Para cada marcador:
+        Nome: [EXEMPLO] (como aparece no Word)
+        Descrição: "Texto explicativo"
+        Coluna: Nome da coluna no Excel
+  3. Digite "sair" para finalizar
+
+Passo 4: Opções Avançadas
+  - Workers: Documentos processados simultaneamente (2-6)
+  - Tentativas: Número de tentativas por documento (2-5)
+  - Organização: Agrupar por coluna do Excel
+  - Validação: Verificar dados antes do processamento
+
+--------------------------
+4. PREPARAÇÃO DOS ARQUIVOS
+--------------------------
+► Modelos Word (.docx):
+  - Use placeholders entre colchetes: [NOME], [VALOR], [DATA]
+  - Exemplo: "Prezado [CLIENTE], seu pedido [NUMERO]..."
+
+► Planilha Excel (.xlsx):
+  | CLIENTE  | NUMERO | VALOR   | DATA       |
+  |----------|--------|---------|------------|
+  | João     | 001    | R$ 150  | 2023-08-15 |
+  | Maria    | 002    | R$ 200  | 2023-08-16 |
+
+----------------
+5. PROCESSAMENTO
+----------------
+1. Menu principal > "Processar Documentos"
+2. Acompanhe pela barra de progresso:
+   [███████████████████░░░░] 25/50 (50%) | ⏱️ 1.2 min | 🚀 0.8 doc/s
+3. Aguarde o relatório final
+
+----------------
+6. RESULTADOS
+----------------
+- Documentos gerados na pasta de saída
+- Organizados em subpastas (se configurado)
+- Relatório detalhado: relatorio_detalhado.txt
+- Arquivo ZIP (se ativado nas opções)
+
+-----------------------
+7. SOLUÇÃO DE PROBLEMAS
+-----------------------
+► Placeholders não substituídos:
+  1. Verifique ortografia: [NOME] vs [NOMES]
+  2. Confira nomes das colunas no Excel
+  3. Use sempre CAIXA ALTA/CAPS LOCK
+
+► Erros ao acessar arquivos:
+  1. Feche Word/Excel antes de executar
+  2. Verifique permissões da pasta
+  3. Use caminhos completos: C:\Exemplo\arquivo.xlsx
+
+► Caracteres inválidos em nomes:
+  1. Ative "Limpar caracteres" nas opções
+  2. Sistemas substitui automaticamente: / → _, : → -, etc.
+
+-----------------------
+8. DICAS AVANÇADAS
+-----------------------
+► Placeholders especiais:
+  - [DATA_ATUAL]: Data atual (DD/MM/AAAA)
+  - [HORA_ATUAL]: Hora atual (HH:MM)
+
+► Para grandes volumes (500+ documentos):
+  - Aumente workers para 4-6
+  - Desative visualização do Word em segundo plano
+
+► Múltiplos modelos:
+  - Adicione vários .docx na pasta de modelos
+  - Cada registro gerará todos os documentos
+
+-----------------------
+9. EXEMPLOS PRÁTICOS
+-----------------------
+► Certificados de Curso:
+  Placeholders: [ALUNO], [CURSO], [DATA]
+  Colunas Excel: Nome_Aluno, Nome_Curso, Data_Conclusao
+  Saída: Certificado_Maria.docx, Certificado_Joao.docx
+
+► Contratos de Locação:
+  Placeholders: [LOCADOR], [IMOVEL], [VALOR]
+  Organização por: Cidade
+  Saída: 
+    📁 Sao_Paulo/Contrato_001.docx
+    📁 Rio_Janeiro/Contrato_002.docx
+
+10. SUPORTE
+-----------
+Em caso de problemas:
+1. Verifique relatorio_detalhado.txt
+
+==========================================
+Versão 1.0 | Document Automator | Jul/2025
+==========================================

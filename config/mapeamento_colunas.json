@@ -1,0 +1,12 @@
+{
+  "saude": {
+    "TITULAR/DEPENDENTE": "TIT/DEP",
+    "DATA INCLUSÃO": "Data Inclusao",
+    "DATA DE ADMISSÃO": "DATA DE ADMISSAO",
+    "NUMERO": "Numero",
+    "COMPLEMENTO": "Complemento",
+    "BAIRRO": "Bairro",
+    "PLANO": "Plano"
+  },
+  "odonto": {}
+}
